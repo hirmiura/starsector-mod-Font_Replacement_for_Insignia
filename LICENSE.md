@@ -1,14 +1,14 @@
 # License
 
-Copyright (c) 2022, Hiroshi Miura (https://github.com/hirmiura)
+Copyright (c) 2022, Hiroshi Miura <https://github.com/hirmiura>
 with Reserved Font Name TamaTou.
 
 These font softwares are licensed under the [SIL Open Font License].
 
--   Products font
-    -   Sika
--   Source fonts
-    -   Cica
+- Products font
+  - Sika
+- Source fonts
+  - Cica
 
 Other scripts and codes are licensed under the [MIT License].
 
