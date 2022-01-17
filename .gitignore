@@ -1,0 +1,14 @@
+# pycache
+__pycache__/
+
+# ソースフォントは除外する
+*.otf
+*.ttf
+*.sfd
+
+# srcに生成されたビットマップフォントは除外する
+/src/*.fnt
+/src/*.png
+
+# 一時テスト用のファイルは除外する
+/src/test.bmfc
