@@ -1,8 +1,8 @@
 {
-    "id": "FontSikaForInsignia",
-    "name": "zja Font Sika for Insignia",
+    "id": "FontReplacementForInsignia",
+    "name": "zja Font Replacement for Insignia",
     "author": "hirmiura",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "description": "Font replacement Insignia with Sika. Sika is generated from Cica.",
     "gameVersion": "0.95.1a-RC6"
 }
