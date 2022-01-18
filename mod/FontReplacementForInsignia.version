@@ -1,0 +1,9 @@
+{
+    "masterVersionFile": "https://raw.githubusercontent.com/hirmiura/starsector-mod-Font_Replacement_for_Insignia/main/mod/FontReplacementForInsignia.version",
+    "modName": "zja Font Replacement for Insignia",
+    "modVersion": {
+        "major": 0,
+        "minor": 2,
+        "patch": 0
+    }
+}
