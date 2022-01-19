@@ -1,0 +1,24 @@
+{
+    // 全体に反映するテンプレート
+    "template": "bmfc_template.txt",
+    "config": [
+        {
+            "outputfile": "NSJM15aa",
+            "fontSize": 15,
+            "outWidth": 2048,
+            "outHeight": 2048
+        },
+        {
+            "outputfile": "NSJM21aa",
+            "fontSize": 21,
+            "outWidth": 4096,
+            "outHeight": 2048
+        },
+        {
+            "outputfile": "NSJM25aa",
+            "fontSize": 25,
+            "outWidth": 4096,
+            "outHeight": 2048
+        }
+    ]
+}

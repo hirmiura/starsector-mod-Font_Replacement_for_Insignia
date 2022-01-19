@@ -172,7 +172,7 @@ class BMFC:
 
     @classmethod
     def load(cls, file):
-        with open(file) as f:
+        with open(file, encoding='utf-8') as f:
             return cls.read(f.read())
 
     def _make_chars(self) -> str:
@@ -270,7 +270,7 @@ outlineThickness={self.outlineThickness}
         return ''.join(tli)
 
     def save(self, file) -> None:
-        with open(file, 'w') as f:
+        with open(file, 'w', encoding='utf-8') as f:
             f.write(str(self))
 
     def apply_dict(self, d: dict) -> None:
