@@ -5,6 +5,7 @@
 # Bitmap Font Generator Configuration file class
 from __future__ import annotations
 
+import inspect
 import io
 import re
 import sys
@@ -29,12 +30,12 @@ class NumRange:
             self._end = begin
 
     def __eq__(self, other):
-        if isinstance(other, NumRange):
+        if not isinstance(other, NumRange):
             return NotImplemented
         return self._begin == other._begin and self._end == other._end
 
     def __lt__(self, other):
-        if isinstance(other, NumRange):
+        if not isinstance(other, NumRange):
             return NotImplemented
         if self._begin != other._begin:
             return self._begin < other._begin
@@ -135,6 +136,7 @@ class BMFC:
     def read(cls, text: str):
         result = cls()
         tli = text.splitlines()
+        attrs = dict(inspect.getmembers(result, lambda x: not callable(x)))
         for line in tli:
             # コメントと空行
             if re.match(r'\s*#|\s*$', line):
@@ -152,18 +154,20 @@ class BMFC:
                 continue
 
             # その他
-            m = re.match(r'(\w+)=(\w+)', line)
+            m = re.match(r'(\w+)=(.+)', line)
             if m:
-                var = getattr(result, m.group(1))
-                if var:
-                    ty = type(var)
-                    val = m.group(2)
-                    if ty is int:
-                        var = int(val)
-                    elif ty is float:
-                        var = float(val)
-                    elif ty is str:
-                        var = val
+                k = m.group(1)
+                if k not in attrs:
+                    continue
+                var = attrs[k]
+                ty = type(var)
+                v = m.group(2)
+                if ty is int:
+                    setattr(result, k, int(v))
+                elif ty is float:
+                    setattr(result, k, float(v))
+                elif ty is str:
+                    setattr(result, k, str(v))
         return result
 
     @classmethod
@@ -268,6 +272,28 @@ outlineThickness={self.outlineThickness}
     def save(self, file) -> None:
         with open(file, 'w') as f:
             f.write(str(self))
+
+    def apply_dict(self, d: dict) -> None:
+        assert d is not None
+        attrs = dict(inspect.getmembers(self, lambda x: not callable(x)))
+        for k, v in d.items():
+            if k not in attrs:
+                continue
+            var = attrs[k]
+            ty = type(var)
+            if ty is int:
+                setattr(self, k, int(v))
+            elif ty is float:
+                setattr(self, k, float(v))
+            elif ty is str:
+                setattr(self, k, str(v))
+            elif k == 'chars':
+                numlist = v.split(',')
+                for nums in numlist:
+                    n1, *n2 = nums.split('-')
+                    n1 = int(n1)
+                    n2 = int(n2[0]) if n2 else None
+                    self.chars.append(NumRange(n1, n2))
 
 
 def test():
