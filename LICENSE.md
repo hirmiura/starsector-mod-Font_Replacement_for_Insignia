@@ -6,9 +6,9 @@ with Reserved Font Name TamaTou.
 These font softwares are licensed under the [SIL Open Font License].
 
 - Products font
-  - Sika
+  - NSJ
 - Source fonts
-  - Cica
+  - Noto Sans Japanese
 
 Other scripts and codes are licensed under the [MIT License].
 

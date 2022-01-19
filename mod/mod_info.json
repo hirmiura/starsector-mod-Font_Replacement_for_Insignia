@@ -3,6 +3,6 @@
     "name": "zja Font Replacement for Insignia",
     "author": "hirmiura",
     "version": "0.2.0",
-    "description": "Font replacement Insignia with Sika. Sika is generated from Cica.",
+    "description": "Font replacement Insignia with Noto Sans JP.",
     "gameVersion": "0.95.1a-RC6"
 }
