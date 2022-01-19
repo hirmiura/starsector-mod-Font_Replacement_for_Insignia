@@ -12,13 +12,14 @@ all: bmfc fnt
 
 .bmfc.fnt:
 	$(BMFONT) -c $< -o $@
+	$(PYTHON) fixface.py $@
 
 bmfc: bmfcgen.json
 	$(PYTHON) bmfcgen.py
 
 fnt: bmfc $(FNTS)
 
-install:
+install: clean-install
 	mv $(FNTNAME)15aa.fnt $(DST)insignia15LTaa.fnt
 	mv $(FNTNAME)21aa.fnt $(DST)insignia21LTaa.fnt
 	mv $(FNTNAME)25aa.fnt $(DST)insignia25LTaa.fnt
