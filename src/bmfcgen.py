@@ -25,12 +25,6 @@ BMFC_TEMP_FILE = 'bmfc_template.txt'
 
 
 @dataclass
-class TextureSize:
-    Width: int
-    Height: int
-
-
-@dataclass
 class BmfGenConf(BMFC):
     outputfile: str = ''
     nameInStarsector: list[str] = field(default_factory=list)
