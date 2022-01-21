@@ -20,9 +20,12 @@ bmfc: bmfcgen.json
 fnt: bmfc $(FNTS)
 
 fixheight:
-	sed -r -i -e 's/ height=19 / height=17 /g' -e 's/ yoffset=0 / yoffset=3 /g' $(DST)insignia15LTaa.fnt
-	sed -r -i -e 's/ height=28 / height=26 /g' -e 's/ yoffset=0 / yoffset=5 /g' $(DST)insignia21LTaa.fnt
-	sed -r -i -e 's/ height=34 / height=31 /g' -e 's/ yoffset=0 / yoffset=6 /g' $(DST)insignia25LTaa.fnt
+	$(PYTHON) fixheight.py -y -4 -h -6 $(DST)insignia15LTaa.fnt
+	$(PYTHON) fixheight.py -y -6 -h -8 $(DST)insignia21LTaa.fnt
+	$(PYTHON) fixheight.py -y -7 -h -10 $(DST)insignia25LTaa.fnt
+	# sed -r -i -e 's/ height=19 / height=17 /g' -e 's/ yoffset=0 / yoffset=3 /g' $(DST)insignia15LTaa.fnt
+	# sed -r -i -e 's/ height=28 / height=26 /g' -e 's/ yoffset=0 / yoffset=5 /g' $(DST)insignia21LTaa.fnt
+	# sed -r -i -e 's/ height=34 / height=31 /g' -e 's/ yoffset=0 / yoffset=6 /g' $(DST)insignia25LTaa.fnt
 
 install: clean-install
 	mv $(FNTNAME)15aa.fnt $(DST)insignia15LTaa.fnt
