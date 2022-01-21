@@ -31,11 +31,11 @@ def process():
         iMax: int = len(lines)
         while(i < iMax):
             m = re.search(r'^(.+\sy=)(\d+)(\s.+\sheight=)(\d+)(\s.+)$', lines[i])
-            if not m:
-                continue
-            y = int(m.group(2)) + args.y
-            h = int(m.group(4)) + args.t
-            lines[i] = ''.join([m.group(1), str(y), m.group(3), str(h), m.group(5)])
+            if m:
+                y = int(m.group(2)) + args.y
+                h = int(m.group(4)) + args.t
+                lines[i] = ''.join([m.group(1), str(y), m.group(3), str(h), m.group(5)])
+            i += 1
         text = '\n'.join(lines)
         fp.write_text(text, encoding='utf-8')
 
