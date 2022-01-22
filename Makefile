@@ -7,6 +7,7 @@ PKG_NAME = Font_Replacement_for_Insignia.zip
 
 package: clean
 	cp -r mod $(DIR_NAME)
+	cp CHANGELOG.md LICENSE.md README.md $(DIR_NAME)
 	$(ZIP) -r $(PKG_NAME) $(DIR_NAME)
 	rm -fr $(DIR_NAME)
 
