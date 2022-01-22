@@ -30,9 +30,9 @@ def process():
         lines = text.splitlines()
         # 2行目を処理する
         if args.lh:
-            lines[1] = re.sub(r' lineHeight=(\d+) ', f' lineHeight={args.lh} ')
+            lines[1] = re.sub(r' lineHeight=(\d+) ', f' lineHeight={args.lh} ', lines[1])
         if args.ba:
-            lines[1] = re.sub(r' base=(\d+) ', f' base={args.ba} ')
+            lines[1] = re.sub(r' base=(\d+) ', f' base={args.ba} ', lines[1])
         # 3行目から処理する
         i: int = 2
         iMax: int = len(lines)
