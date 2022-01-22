@@ -20,9 +20,9 @@ bmfc: bmfcgen.json
 fnt: bmfc $(FNTS)
 
 fixheight:
-	$(PYTHON) fixheight.py -y=4 -t=-6 $(DST)insignia15LTaa.fnt
-	$(PYTHON) fixheight.py -y=6 -t=-8 $(DST)insignia21LTaa.fnt
-	$(PYTHON) fixheight.py -y=7 -t=-10 $(DST)insignia25LTaa.fnt
+	$(PYTHON) fixheight.py -lh 15 -ba 12 -y 4 -t=-4 $(DST)insignia15LTaa.fnt
+	$(PYTHON) fixheight.py -lh 21 -ba 17 -y 6 -t=-7 $(DST)insignia21LTaa.fnt
+	$(PYTHON) fixheight.py -lh 24 -ba 20 -y 7 -t=-10 $(DST)insignia25LTaa.fnt
 
 install: clean-install
 	mv $(FNTNAME)15aa.fnt $(DST)insignia15LTaa.fnt
