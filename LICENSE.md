@@ -1,12 +1,10 @@
 # License
 
 Copyright (c) 2022, Hiroshi Miura <https://github.com/hirmiura>
-with Reserved Font Name TamaTou.
 
 These font softwares are licensed under the [SIL Open Font License].
 
 - Products font
-  - NSJ
 - Source fonts
   - Noto Sans Japanese
 
