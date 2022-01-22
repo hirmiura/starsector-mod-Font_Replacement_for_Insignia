@@ -12,3 +12,6 @@ __pycache__/
 # srcに生成されたビットマップフォントは除外する
 /src/*.fnt
 /src/*.png
+
+# zip
+*.zip
